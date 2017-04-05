@@ -76,14 +76,6 @@ No tests are executed yet. I prefer the `maven-failsafe-plugin` for executing in
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-failsafe-plugin</artifactId>
-    <executions>
-        <execution>
-            <goals>
-                <goal>integration-test</goal>
-                <goal>verify</goal>
-            </goals>
-        </execution>
-    </executions>
     <configuration>
         <environmentVariables>
             <!-- Push the Maven property into the environment under the given name (here: spring.data.mongodb.port) -->
