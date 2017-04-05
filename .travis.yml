@@ -6,3 +6,6 @@ services:
 - docker
 script:
 - ./mvnw verify
+cache:
+  directories:
+  - $HOME/.m2
