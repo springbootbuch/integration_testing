@@ -102,23 +102,23 @@ As we are using Spring Boot here, the integration test `SomeDocumentRepositoryIT
 @DataMongoTest
 public class SomeDocumentRepositoryIT {
 
-	private static final Logger LOG = LoggerFactory
-		.getLogger(SomeDocumentRepositoryIT.class);
+    private static final Logger LOG = LoggerFactory
+        .getLogger(SomeDocumentRepositoryIT.class);
 
-	@Autowired
-	private SomeDocumentRepository someDocumentRepository;
+    @Autowired
+    private SomeDocumentRepository someDocumentRepository;
 
-	@Autowired
-	private MongoTemplate mongoTemplate;
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
-	@Test
-	public void doSomething() {
-		someDocumentRepository.deleteAll();
-		final SomeDocument d = someDocumentRepository.save(new SomeDocument("foobar"));
-		LOG.info("Stored document with id {}", d.getId());
-		final SomeDocument d2 = mongoTemplate.findById(d.getId(), SomeDocument.class);
-		assertThat(d2.getValue(), is("foobar"));
-	}
+    @Test
+    public void doSomething() {
+        someDocumentRepository.deleteAll();
+        final SomeDocument d = someDocumentRepository.save(new SomeDocument("foobar"));
+        LOG.info("Stored document with id {}", d.getId());
+        final SomeDocument d2 = mongoTemplate.findById(d.getId(), SomeDocument.class);
+        assertThat(d2.getValue(), is("foobar"));
+    }
 }
 ```
 
