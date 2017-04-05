@@ -70,6 +70,7 @@
                             <goal>start</goal>
                         </goals>
                         <configuration>
+                            <skip>${skipTests}</skip>
                             <images>
                                 <image>
                                     <alias>mongo-db</alias>
@@ -90,6 +91,9 @@
                         <goals>
                             <goal>stop</goal>
                         </goals>
+                        <configuration>
+                            <skip>${skipTests}</skip>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
