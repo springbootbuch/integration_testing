@@ -90,7 +90,7 @@ You can push the whole connectstring into your enviroment.
 As we are using Spring Boot here, the integration test `SomeDocumentRepositoryIT` is pretty simple:
 
 ```java
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @DataMongoTest
 public class SomeDocumentRepositoryIT {
 
